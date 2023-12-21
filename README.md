@@ -1,6 +1,6 @@
-# Godot 4 Open RPG
+# Godot 4 Open RPG, Hololive Themed
 
-![Godot Open RPG banner](media/Open-RPG.png)
+![Godot Open HoloRPG banner](media/holosanct.png)
 
 OpenRPG is a tool and a demo to create Role Playing Games with turn-based combat.
 
@@ -35,3 +35,13 @@ And more! Do you want to contribute and improve your programming skills with God
 All contributors are welcome 🙂. To ensure a smooth and a productive experience for everyone working together, we came up with some guidelines we all follow here.
 
 Check our [Contributors Guide](https://gdquest.gitbook.io/gdquests-guidelines/contributing-to-gdquest-projects/) for more information 😄
+
+## This Edition:
+Rebuilt by Kaizar Nike for HoloJam 2, a Hololive by Cover Corp fan project.
+
+# TEAM :
+KaizarNike - Programmer
+Paviel Ulanovskyi - Programmer
+
+KogetsuHatena - Art + Design
+VirtuousVarmint - Writing + Narrative
