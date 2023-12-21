@@ -196,6 +196,7 @@ func _talk_to():
 		advance_dialog()
 		return
 	print("NOW TALK")
+	advance_dialog()
 	$Marker2D/PanelContainer.visible = true
 	pass
 
@@ -205,6 +206,9 @@ func advance_dialog():
 			$Marker2D/PanelContainer/VSplitContainer.visible = false
 			$Marker2D/PanelContainer/VideoStreamPlayer.visible = true
 			$Marker2D/PanelContainer/VideoStreamPlayer.play()
+			currentDialogLine += 1
+		elif dialog[currentDialogLine] == "HEART":
+			$Marker2D/PanelContainer/TextAnims.play("heart_change")
 			currentDialogLine += 1
 		else:
 			$Marker2D/PanelContainer/VSplitContainer.visible = true

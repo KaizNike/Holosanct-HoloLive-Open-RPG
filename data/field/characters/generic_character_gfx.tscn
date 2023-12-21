@@ -8,7 +8,7 @@
 size = Vector2(16, 16)
 
 [node name="GenericCharacterAnimation" instance=ExtResource("1_pdtfs")]
-char_name = null
+char_name = "???"
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {
@@ -23,3 +23,9 @@ texture = ExtResource("3_cn4da")
 offset = Vector2(0, -6)
 region_enabled = true
 region_rect = Rect2(1, 1, 16, 16)
+
+[node name="PanelContainer" parent="Marker2D" index="0"]
+visible = false
+
+[node name="NameLabel" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
+text = "???"

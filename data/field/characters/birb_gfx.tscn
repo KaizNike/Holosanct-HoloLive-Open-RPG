@@ -26,10 +26,8 @@ dragger_visibility = 0
 layout_mode = 2
 text = "Name"
 
-[node name="TextureRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="2"]
-texture = null
-expand_mode = 0
-stretch_mode = 0
+[node name="TextureRect" type="TextureRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="2"]
+layout_mode = 2
 
 [node name="Label" type="Label" parent="Marker2D/PanelContainer/VSplitContainer" index="1"]
 layout_mode = 2

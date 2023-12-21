@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5igmfumcbl4k"]
+[gd_scene load_steps=5 format=3 uid="uid://b5igmfumcbl4k"]
 
 [ext_resource type="PackedScene" uid="uid://se1wnxu5svgj" path="res://data/field/characters/knight_gfx.tscn" id="1_mstvt"]
 [ext_resource type="Texture2D" uid="uid://6x7ucp0ufn68" path="res://assets/characters/HoloENDraft1.png" id="2_nge2c"]
+[ext_resource type="Texture2D" uid="uid://b5xsujn6gntk3" path="res://assets/characters/Heart.png" id="3_hlphf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srh1t"]
+atlas = ExtResource("3_hlphf")
+region = Rect2(0, 0, 12, 12)
 
 [node name="KiaraGFX" instance=ExtResource("1_mstvt")]
 
@@ -23,3 +28,9 @@ dragger_visibility = 0
 [node name="Label" type="Label" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
 layout_mode = 2
 text = "Name"
+
+[node name="TextureRect" type="TextureRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_srh1t")
+expand_mode = 2
+stretch_mode = 2

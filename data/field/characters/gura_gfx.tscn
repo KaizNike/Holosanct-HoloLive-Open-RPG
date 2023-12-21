@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7kfm6xegh0xr"]
+[gd_scene load_steps=5 format=3 uid="uid://c7kfm6xegh0xr"]
 
 [ext_resource type="PackedScene" uid="uid://se1wnxu5svgj" path="res://data/field/characters/knight_gfx.tscn" id="1_bme28"]
 [ext_resource type="Texture2D" uid="uid://6x7ucp0ufn68" path="res://assets/characters/HoloENDraft1.png" id="2_ofmf4"]
+[ext_resource type="VideoStream" path="res://assets/vids/REFLECT-Gawr-Gura.ogv" id="3_3qmjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pf3g5"]
 size = Vector2(16, 16)
 
 [node name="GuraGFX" instance=ExtResource("1_bme28")]
+char_name = "???"
 
 [node name="Sprite" parent="GFX" index="0"]
 texture = ExtResource("2_ofmf4")
@@ -21,15 +23,8 @@ shape = SubResource("RectangleShape2D_pf3g5")
 visible = false
 z_index = 0
 
-[node name="VSplitContainer" parent="Marker2D/PanelContainer" index="0"]
-collapsed = false
-dragger_visibility = 0
+[node name="NameLabel" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
+text = "???"
 
-[node name="Label" type="Label" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
-layout_mode = 2
-text = "Name"
-
-[node name="Label" type="Label" parent="Marker2D/PanelContainer/VSplitContainer" index="1"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Hello!"
+[node name="VideoStreamPlayer" parent="Marker2D/PanelContainer" index="1"]
+stream = ExtResource("3_3qmjf")
