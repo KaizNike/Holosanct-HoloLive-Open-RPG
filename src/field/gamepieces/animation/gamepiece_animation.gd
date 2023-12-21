@@ -19,6 +19,10 @@ const DIRECTION_SUFFIXES: = {
 	Directions.Points.W: "_w",
 }
 
+@export var dialog = []
+
+var currentDialogLine = 0
+
 ## The animation currently being played.
 var current_sequence_id: = "":
 	set = play
@@ -28,6 +32,8 @@ var current_sequence_id: = "":
 ## animations if they are available; otherwise non-directional animations will be used.
 var direction: = Directions.Points.N:
 	set = set_direction
+
+var player_in_range: = false
 
 @onready var _anim: = $AnimationPlayer as AnimationPlayer
 @onready var _collision_shape: = $Area2D/CollisionShape2D as CollisionShape2D
@@ -39,6 +45,8 @@ var direction: = Directions.Points.N:
 # appear to run to catch up to the cell.
 @onready var _gfx: = $GFX as Marker2D
 
+### PLANNING -
+# 
 
 func _ready() -> void:
 	if not Engine.is_editor_hint():
@@ -60,6 +68,10 @@ func _ready() -> void:
 		# example we may be swapping animation objects on an existing gamepiece).
 		await get_tree().process_frame
 		gamepiece.gfx_anchor.remote_path = gamepiece.gfx_anchor.get_path_to(_gfx)
+
+
+func _physics_process(_delta):
+	pass
 
 
 func _notification(what: int) -> void:
@@ -174,3 +186,40 @@ func _on_gamepiece_blocks_movement_changed(gamepiece: Gamepiece) -> void:
 
 func _on_gamepiece_travel_begun():
 	play("run")
+
+
+func _talk_to():
+	if $Marker2D/PanelContainer.visible:
+		advance_dialog()
+		return
+	print("NOW TALK")
+	$Marker2D/PanelContainer.visible = true
+	pass
+
+func advance_dialog():
+	pass
+
+func _on_talk_region_area_entered(area):
+	if area.is_in_group("player"):
+		print("hello")
+		player_in_range = true
+	pass # Replace with function body.
+
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event.is_action_pressed("select") and player_in_range:
+		_talk_to()
+		pass
+	pass # Replace with function body.
+	
+func _input(event):
+	if event.is_action_pressed("interact") and player_in_range:
+		_talk_to()
+
+
+func _on_talk_region_area_exited(area):
+	if area.is_in_group("player"):
+		print("hello")
+		player_in_range = false
+		$Marker2D/PanelContainer.visible = false
+	pass # Replace with function body.

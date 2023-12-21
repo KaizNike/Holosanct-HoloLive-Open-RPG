@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5igmfumcbl4k"]
+
+[ext_resource type="PackedScene" uid="uid://se1wnxu5svgj" path="res://data/field/characters/knight_gfx.tscn" id="1_mstvt"]
+[ext_resource type="Texture2D" uid="uid://6x7ucp0ufn68" path="res://assets/characters/HoloENDraft1.png" id="2_nge2c"]
+
+[node name="KiaraGFX" instance=ExtResource("1_mstvt")]
+
+[node name="Sprite" parent="GFX" index="0"]
+texture = ExtResource("2_nge2c")
+vframes = 5
+frame = 4
+
+[node name="PanelContainer" parent="Marker2D" index="0"]
+visible = true
+
+[node name="VSplitContainer" parent="Marker2D/PanelContainer" index="0"]
+collapsed = false
+dragger_visibility = 0
