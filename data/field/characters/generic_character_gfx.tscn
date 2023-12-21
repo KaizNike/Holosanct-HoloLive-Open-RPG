@@ -8,6 +8,7 @@
 size = Vector2(16, 16)
 
 [node name="GenericCharacterAnimation" instance=ExtResource("1_pdtfs")]
+char_name = null
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {

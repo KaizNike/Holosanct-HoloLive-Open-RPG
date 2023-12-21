@@ -17,11 +17,9 @@ frame = 1
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_pf3g5")
 
-[node name="Marker2D" parent="." index="4"]
-visible = true
-
 [node name="PanelContainer" parent="Marker2D" index="0"]
 visible = false
+z_index = 0
 
 [node name="VSplitContainer" parent="Marker2D/PanelContainer" index="0"]
 collapsed = false

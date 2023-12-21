@@ -20,6 +20,7 @@ const DIRECTION_SUFFIXES: = {
 }
 
 @export var dialog = []
+@export var char_name := "???"
 
 var currentDialogLine = 0
 
@@ -68,6 +69,8 @@ func _ready() -> void:
 		# example we may be swapping animation objects on an existing gamepiece).
 		await get_tree().process_frame
 		gamepiece.gfx_anchor.remote_path = gamepiece.gfx_anchor.get_path_to(_gfx)
+	$Marker2D/PanelContainer/VSplitContainer/HBoxContainer/NameLabel.text = char_name
+	$Marker2D/PanelContainer.visible = false
 
 
 func _physics_process(_delta):
@@ -220,19 +223,21 @@ func _on_talk_region_area_entered(area):
 
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
-	if event.is_action_pressed("select") and player_in_range:
+	print(player_in_range)
+	if event.is_action_pressed("select") and player_in_range and dialog:
 		_talk_to()
 		pass
 	pass # Replace with function body.
 	
 func _input(event):
+	#print(str(player_in_range) + "_input")
 	if event.is_action_pressed("interact") and player_in_range:
 		_talk_to()
 
 
 func _on_talk_region_area_exited(area):
 	if area.is_in_group("player"):
-		print("hello")
+		print("goodbye")
 		player_in_range = false
 		$Marker2D/PanelContainer.visible = false
 	pass # Replace with function body.

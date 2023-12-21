@@ -8,7 +8,7 @@
 size = Vector2(16, 16)
 
 [node name="GoBotGFX" instance=ExtResource("1_ggnk7")]
-dialog = null
+char_name = null
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {

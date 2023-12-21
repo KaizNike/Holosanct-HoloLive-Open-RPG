@@ -12,6 +12,12 @@ texture = ExtResource("2_dtoay")
 collision_layer = 1
 collision_mask = 1
 
+[node name="Marker2D" parent="." index="4"]
+visible = false
+
+[node name="PanelContainer" parent="Marker2D" index="0"]
+z_index = 0
+
 [node name="VSplitContainer" parent="Marker2D/PanelContainer" index="0"]
 collapsed = false
 dragger_visibility = 0

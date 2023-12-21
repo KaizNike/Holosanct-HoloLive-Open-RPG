@@ -48,6 +48,7 @@ size = Vector2(16, 16)
 size = Vector2(16, 16)
 
 [node name="KnightGFX" instance=ExtResource("1_7u2js")]
+char_name = null
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {

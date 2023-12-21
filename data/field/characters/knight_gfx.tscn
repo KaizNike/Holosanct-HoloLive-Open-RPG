@@ -44,6 +44,7 @@ _data = {
 size = Vector2(16, 16)
 
 [node name="KnightGFX" instance=ExtResource("1_c58iv")]
+char_name = null
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {

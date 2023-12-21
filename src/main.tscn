@@ -1,9 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://q8xq4np3t6is"]
+[gd_scene load_steps=36 format=3 uid="uid://q8xq4np3t6is"]
 
 [ext_resource type="Script" path="res://src/field/field.gd" id="2_bkxev"]
 [ext_resource type="Script" path="res://src/field/field_cursor.gd" id="5_3guor"]
 [ext_resource type="TileSet" uid="uid://ba2bnli4c27pk" path="res://assets/terrain/tilesets/kenney_terrain.tres" id="5_rv0gh"]
-[ext_resource type="Resource" path="res://data/default_gameboard.tres" id="6_kd8tv"]
+[ext_resource type="Resource" uid="uid://degk5neped2fg" path="res://data/default_gameboard.tres" id="6_kd8tv"]
 [ext_resource type="TileSet" uid="uid://biq84075xlypd" path="res://assets/terrain/tilesets/kenney_obstacles.tres" id="7_po5fq"]
 [ext_resource type="Texture2D" uid="uid://dm4h0uo6gjp22" path="res://assets/terrain/dungeon_tilemap.png" id="9_woa3f"]
 [ext_resource type="PackedScene" uid="uid://b626e0bngfvjj" path="res://src/field/gamepieces/gamepiece.tscn" id="11_yntrj"]
@@ -37,6 +37,8 @@ sources/0 = SubResource("TileSetAtlasSource_orie5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nn0hs"]
 size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhgrf"]
 
 [sub_resource type="Animation" id="Animation_sr8xj"]
 length = 0.001
@@ -120,7 +122,7 @@ layer_0/tile_data = PackedInt32Array(524293, 0, 4, 589829, 0, 5, 655365, 0, 6, 5
 layer_1/name = "NonBlocking"
 layer_1/modulate = Color(1, 1, 1, 0.803922)
 layer_1/y_sort_enabled = true
-layer_1/z_index = 100
+layer_1/z_index = 6
 layer_1/tile_data = PackedInt32Array(589838, 524288, 7, 786440, 262144, 0, 786439, 262144, 0, 917513, 196608, 0, 851972, 196608, 0, 786434, 196608, 0, 917507, 196608, 0, 851983, 262144, 0, 589836, 262144, 0, 589834, 262144, 0, 851989, 262144, 0, 524312, 262144, 0, 327683, 262144, 0, 65554, 262144, 0, 131088, 262144, 0, 20, 196608, 0)
 
 [node name="PlayerCursor" type="TileMap" parent="Objects"]
@@ -138,7 +140,7 @@ gameboard = ExtResource("6_kd8tv")
 [node name="Gamepieces" type="Node2D" parent="Objects"]
 y_sort_enabled = true
 
-[node name="Player" parent="Objects/Gamepieces" groups=["player"] instance=ExtResource("11_yntrj")]
+[node name="Player" parent="Objects/Gamepieces" instance=ExtResource("11_yntrj")]
 position = Vector2(167.6, 119.2)
 gameboard = ExtResource("6_kd8tv")
 blocks_movement = true
@@ -146,6 +148,7 @@ move_speed = 96.0
 metadata/_edit_group_ = true
 
 [node name="GoBotGFX" parent="Objects/Gamepieces/Player" instance=ExtResource("12_oablq")]
+char_name = "???"
 
 [node name="Area2D" parent="Objects/Gamepieces/Player/GoBotGFX" index="1" groups=["player"]]
 
@@ -153,15 +156,16 @@ metadata/_edit_group_ = true
 collision_layer = 1
 collision_mask = 1
 
-[node name="Marker2D" parent="Objects/Gamepieces/Player/GoBotGFX" index="4"]
-visible = true
-
 [node name="PanelContainer" parent="Objects/Gamepieces/Player/GoBotGFX/Marker2D" index="0"]
 visible = false
+z_index = 0
 
 [node name="VSplitContainer" parent="Objects/Gamepieces/Player/GoBotGFX/Marker2D/PanelContainer" index="0"]
 collapsed = false
 dragger_visibility = 0
+
+[node name="NameLabel" parent="Objects/Gamepieces/Player/GoBotGFX/Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
+text = "???"
 
 [node name="TextureRect" parent="Objects/Gamepieces/Player/GoBotGFX/Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="1"]
 texture = null
@@ -190,6 +194,18 @@ blocks_movement = true
 metadata/_edit_group_ = true
 
 [node name="KnightGFX" parent="Objects/Gamepieces/Knight" instance=ExtResource("14_av6f5")]
+dialog = ["Guarding is what I do. Fun."]
+char_name = "Sam"
+
+[node name="CollisionShape2D" parent="Objects/Gamepieces/Knight/KnightGFX/TalkRegion" index="0"]
+position = Vector2(-4.8, 4)
+shape = SubResource("RectangleShape2D_vhgrf")
+
+[node name="PanelContainer" parent="Objects/Gamepieces/Knight/KnightGFX/Marker2D" index="0"]
+visible = false
+
+[node name="NameLabel" parent="Objects/Gamepieces/Knight/KnightGFX/Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
+text = "Sam"
 
 [node name="Runner" parent="Objects/Gamepieces" instance=ExtResource("11_yntrj")]
 position = Vector2(216, 200)
@@ -198,6 +214,7 @@ blocks_movement = true
 metadata/_edit_group_ = true
 
 [node name="GenericCharacterAnimation" parent="Objects/Gamepieces/Runner" instance=ExtResource("12_n5rm1")]
+char_name = "???"
 
 [node name="LoopAI" type="Node2D" parent="Objects/Gamepieces/Runner" node_paths=PackedStringArray("move_path")]
 script = ExtResource("12_glwd5")
@@ -219,6 +236,7 @@ blocks_movement = true
 metadata/_edit_group_ = true
 
 [node name="LadyGFX" parent="Objects/Gamepieces/BeeKeeper" instance=ExtResource("17_sieyv")]
+char_name = "???"
 
 [node name="Kiara" parent="Objects/Gamepieces" instance=ExtResource("11_yntrj")]
 position = Vector2(56, 216)
@@ -227,6 +245,7 @@ blocks_movement = true
 metadata/_edit_group_ = true
 
 [node name="KiaraGFX" parent="Objects/Gamepieces/Kiara" instance=ExtResource("16_n4sfp")]
+char_name = "???"
 
 [node name="Smith" parent="Objects/Gamepieces" instance=ExtResource("11_yntrj")]
 position = Vector2(280, 120)
@@ -235,6 +254,7 @@ blocks_movement = true
 metadata/_edit_group_ = true
 
 [node name="KnightGFX" parent="Objects/Gamepieces/Smith" instance=ExtResource("18_2msel")]
+char_name = "???"
 
 [node name="Wizard" parent="Objects/Gamepieces" instance=ExtResource("11_yntrj")]
 position = Vector2(40, 40)
@@ -244,14 +264,17 @@ metadata/_edit_group_ = true
 
 [node name="KnightGFX" parent="Objects/Gamepieces/Wizard" instance=ExtResource("19_ius2d")]
 dialog = ["Hello Link, take this!", "It will aid you on your journey."]
+char_name = "Old Man"
 
 [node name="GawrGura" parent="Objects/Gamepieces" instance=ExtResource("11_yntrj")]
 position = Vector2(216, 168)
 gameboard = ExtResource("6_kd8tv")
+blocks_movement = true
 
 [node name="GuraGFX" type="Marker2D" parent="Objects/Gamepieces/GawrGura"]
 script = ExtResource("19_dflfc")
 dialog = ["Maybe a song?", "VIDEO", "Oh boy! I love to sing."]
+char_name = "Gawr Gura"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Objects/Gamepieces/GawrGura/GuraGFX"]
 libraries = {
@@ -290,6 +313,7 @@ position = Vector2(0, -32)
 
 [node name="PanelContainer" type="PanelContainer" parent="Objects/Gamepieces/GawrGura/GuraGFX/Marker2D"]
 visible = false
+z_index = 80
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -333,12 +357,14 @@ position = Vector2(72, 200)
 gameboard = ExtResource("6_kd8tv")
 
 [node name="BirbGFX" parent="Objects/Gamepieces/Bird1" instance=ExtResource("19_oinmj")]
+char_name = "???"
 
 [node name="Bird2" parent="Objects/Gamepieces" instance=ExtResource("11_yntrj")]
 position = Vector2(40, 184)
 gameboard = ExtResource("6_kd8tv")
 
 [node name="BirbGFX" parent="Objects/Gamepieces/Bird2" instance=ExtResource("19_oinmj")]
+char_name = "???"
 
 [node name="MapBoundaries" type="Node2D" parent="."]
 script = ExtResource("18_cqtg7")
@@ -354,3 +380,4 @@ position_smoothing_speed = 8.0
 [connection signal="area_exited" from="Objects/Gamepieces/GawrGura/GuraGFX/TalkRegion" to="Objects/Gamepieces/GawrGura/GuraGFX" method="_on_talk_region_area_exited"]
 
 [editable path="Objects/Gamepieces/Player/GoBotGFX"]
+[editable path="Objects/Gamepieces/Knight/KnightGFX"]
