@@ -17,6 +17,21 @@ frame = 1
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_pf3g5")
 
+[node name="Marker2D" parent="." index="4"]
+visible = true
+
+[node name="PanelContainer" parent="Marker2D" index="0"]
+visible = false
+
 [node name="VSplitContainer" parent="Marker2D/PanelContainer" index="0"]
 collapsed = false
 dragger_visibility = 0
+
+[node name="Label" type="Label" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Name"
+
+[node name="Label" type="Label" parent="Marker2D/PanelContainer/VSplitContainer" index="1"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hello!"

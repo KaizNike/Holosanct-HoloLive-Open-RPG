@@ -65,3 +65,9 @@ offset = Vector2(0, -6)
 [node name="CollisionShape2D" parent="TalkRegion" index="0"]
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_dm7s2")
+
+[node name="Marker2D" parent="." index="4"]
+visible = true
+
+[node name="PanelContainer" parent="Marker2D" index="0"]
+visible = false

@@ -189,7 +189,7 @@ func _on_gamepiece_travel_begun():
 
 
 func _talk_to():
-	if $Marker2D/PanelContainer.visible:
+	if $Marker2D/PanelContainer.visible == true:
 		advance_dialog()
 		return
 	print("NOW TALK")
@@ -197,7 +197,20 @@ func _talk_to():
 	pass
 
 func advance_dialog():
-	pass
+	if dialog.size() > currentDialogLine:
+		if dialog[currentDialogLine] == "VIDEO":
+			$Marker2D/PanelContainer/VSplitContainer.visible = false
+			$Marker2D/PanelContainer/VideoStreamPlayer.visible = true
+			$Marker2D/PanelContainer/VideoStreamPlayer.play()
+			currentDialogLine += 1
+		else:
+			$Marker2D/PanelContainer/VSplitContainer.visible = true
+			$Marker2D/PanelContainer/VideoStreamPlayer.visible = false
+			$Marker2D/PanelContainer/VideoStreamPlayer.stop()
+			$Marker2D/PanelContainer/VSplitContainer/SpeakText.text = dialog[currentDialogLine]
+			currentDialogLine += 1
+	else:
+		$Marker2D/PanelContainer.visible = false
 
 func _on_talk_region_area_entered(area):
 	if area.is_in_group("player"):

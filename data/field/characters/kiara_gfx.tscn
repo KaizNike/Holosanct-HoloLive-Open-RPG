@@ -10,9 +10,10 @@ texture = ExtResource("2_nge2c")
 vframes = 5
 frame = 4
 
-[node name="PanelContainer" parent="Marker2D" index="0"]
-visible = true
-
 [node name="VSplitContainer" parent="Marker2D/PanelContainer" index="0"]
 collapsed = false
 dragger_visibility = 0
+
+[node name="Label" type="Label" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Name"

@@ -50,10 +50,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TalkRegion"]
 
 [node name="Marker2D" type="Marker2D" parent="."]
+visible = false
 position = Vector2(0, -32)
 
 [node name="PanelContainer" type="PanelContainer" parent="Marker2D"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -75,7 +75,7 @@ dragger_visibility = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="Marker2D/PanelContainer/VSplitContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer"]
+[node name="NameLabel" type="Label" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer"]
 layout_mode = 2
 text = "Name"
 
@@ -85,10 +85,14 @@ texture = SubResource("AtlasTexture_srh1t")
 expand_mode = 2
 stretch_mode = 2
 
-[node name="Label" type="Label" parent="Marker2D/PanelContainer/VSplitContainer"]
+[node name="SpeakText" type="Label" parent="Marker2D/PanelContainer/VSplitContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Hello!"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Marker2D/PanelContainer"]
+visible = false
+layout_mode = 2
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="area_entered" from="TalkRegion" to="." method="_on_talk_region_area_entered"]
