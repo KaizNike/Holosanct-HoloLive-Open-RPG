@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://plyprfg80dym"]
+[gd_scene load_steps=5 format=3 uid="uid://plyprfg80dym"]
 
 [ext_resource type="PackedScene" uid="uid://se1wnxu5svgj" path="res://data/field/characters/knight_gfx.tscn" id="1_wcoy6"]
 [ext_resource type="Texture2D" uid="uid://cqlff37cfemmk" path="res://assets/characters/HoloChickenSeagull.png" id="2_dtoay"]
+[ext_resource type="Texture2D" uid="uid://b5xsujn6gntk3" path="res://assets/characters/Heart.png" id="3_2t8j7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82so5"]
+resource_local_to_scene = true
+atlas = ExtResource("3_2t8j7")
+region = Rect2(0, 0, 12, 12)
 
 [node name="BirbGFX" instance=ExtResource("1_wcoy6")]
+char_name = "???"
 
 [node name="Sprite" parent="GFX" index="0"]
 texture = ExtResource("2_dtoay")
@@ -12,24 +19,19 @@ texture = ExtResource("2_dtoay")
 collision_layer = 1
 collision_mask = 1
 
-[node name="Marker2D" parent="." index="4"]
-visible = false
-
 [node name="PanelContainer" parent="Marker2D" index="0"]
+visible = false
 z_index = 0
 
 [node name="VSplitContainer" parent="Marker2D/PanelContainer" index="0"]
 collapsed = false
 dragger_visibility = 0
 
-[node name="Label" type="Label" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
-layout_mode = 2
-text = "Name"
+[node name="NameLabel" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
+text = "???"
 
-[node name="TextureRect" type="TextureRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="2"]
-layout_mode = 2
+[node name="HeartRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="1"]
+texture = SubResource("AtlasTexture_82so5")
 
-[node name="Label" type="Label" parent="Marker2D/PanelContainer/VSplitContainer" index="1"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Hello!"
+[node name="VideoStreamPlayer" parent="Marker2D/PanelContainer" index="1"]
+expand = false

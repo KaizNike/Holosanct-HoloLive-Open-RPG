@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccm8tsjysf8b5"]
+[gd_scene load_steps=10 format=3 uid="uid://ccm8tsjysf8b5"]
 
 [ext_resource type="PackedScene" uid="uid://caxhff6by5nqu" path="res://src/field/gamepieces/animation/gamepiece_animation.tscn" id="1_7u2js"]
 [ext_resource type="Texture2D" uid="uid://8ry5inpldbfg" path="res://assets/characters/wizard.atlastex" id="2_othtp"]
+[ext_resource type="Texture2D" uid="uid://b5xsujn6gntk3" path="res://assets/characters/Heart.png" id="3_uyftf"]
 
 [sub_resource type="Animation" id="Animation_8lv7x"]
 length = 0.001
@@ -47,8 +48,13 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dm7s2"]
 size = Vector2(16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w8cm"]
+resource_local_to_scene = true
+atlas = ExtResource("3_uyftf")
+region = Rect2(0, 0, 12, 12)
+
 [node name="KnightGFX" instance=ExtResource("1_7u2js")]
-char_name = null
+char_name = "???"
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {
@@ -67,8 +73,11 @@ offset = Vector2(0, -6)
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_dm7s2")
 
-[node name="Marker2D" parent="." index="4"]
-visible = true
-
 [node name="PanelContainer" parent="Marker2D" index="0"]
 visible = false
+
+[node name="NameLabel" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
+text = "???"
+
+[node name="HeartRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="1"]
+texture = SubResource("AtlasTexture_1w8cm")

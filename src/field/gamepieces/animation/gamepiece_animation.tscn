@@ -57,6 +57,7 @@ Label/fonts/font = ExtResource("2_p0v5c")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_87ipo")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_srh1t"]
+resource_local_to_scene = true
 atlas = ExtResource("3_dehfb")
 region = Rect2(0, 0, 12, 12)
 
@@ -169,6 +170,7 @@ text = "Hello!"
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Marker2D/PanelContainer"]
 visible = false
 layout_mode = 2
+expand = true
 
 [node name="TextAnims" type="AnimationPlayer" parent="Marker2D/PanelContainer"]
 libraries = {

@@ -4,33 +4,31 @@
 [ext_resource type="Texture2D" uid="uid://6x7ucp0ufn68" path="res://assets/characters/HoloENDraft1.png" id="2_nge2c"]
 [ext_resource type="Texture2D" uid="uid://b5xsujn6gntk3" path="res://assets/characters/Heart.png" id="3_hlphf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_srh1t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4kjc"]
+resource_local_to_scene = true
 atlas = ExtResource("3_hlphf")
 region = Rect2(0, 0, 12, 12)
 
 [node name="KiaraGFX" instance=ExtResource("1_mstvt")]
+char_name = "???"
 
 [node name="Sprite" parent="GFX" index="0"]
 texture = ExtResource("2_nge2c")
-vframes = 5
+vframes = 6
 frame = 4
 
-[node name="Marker2D" parent="." index="4"]
-visible = false
-
 [node name="PanelContainer" parent="Marker2D" index="0"]
-z_index = 0
+visible = false
 
 [node name="VSplitContainer" parent="Marker2D/PanelContainer" index="0"]
 collapsed = false
 dragger_visibility = 0
 
-[node name="Label" type="Label" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
-layout_mode = 2
-text = "Name"
+[node name="NameLabel" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
+text = "???"
 
-[node name="TextureRect" type="TextureRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="2"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_srh1t")
-expand_mode = 2
-stretch_mode = 2
+[node name="HeartRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="1"]
+texture = SubResource("AtlasTexture_g4kjc")
+
+[node name="VideoStreamPlayer" parent="Marker2D/PanelContainer" index="1"]
+expand = false

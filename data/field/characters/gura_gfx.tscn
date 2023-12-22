@@ -1,18 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7kfm6xegh0xr"]
+[gd_scene load_steps=7 format=3 uid="uid://c7kfm6xegh0xr"]
 
 [ext_resource type="PackedScene" uid="uid://se1wnxu5svgj" path="res://data/field/characters/knight_gfx.tscn" id="1_bme28"]
 [ext_resource type="Texture2D" uid="uid://6x7ucp0ufn68" path="res://assets/characters/HoloENDraft1.png" id="2_ofmf4"]
 [ext_resource type="VideoStream" path="res://assets/vids/REFLECT-Gawr-Gura.ogv" id="3_3qmjf"]
+[ext_resource type="Texture2D" uid="uid://b5xsujn6gntk3" path="res://assets/characters/Heart.png" id="3_orwrp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pf3g5"]
 size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e2yh"]
+resource_local_to_scene = true
+atlas = ExtResource("3_orwrp")
+region = Rect2(0, 0, 12, 12)
 
 [node name="GuraGFX" instance=ExtResource("1_bme28")]
 char_name = "???"
 
 [node name="Sprite" parent="GFX" index="0"]
 texture = ExtResource("2_ofmf4")
-vframes = 5
+vframes = 6
 frame = 1
 
 [node name="CollisionShape2D" parent="TalkRegion" index="0"]
@@ -21,10 +27,12 @@ shape = SubResource("RectangleShape2D_pf3g5")
 
 [node name="PanelContainer" parent="Marker2D" index="0"]
 visible = false
-z_index = 0
 
 [node name="NameLabel" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
 text = "???"
+
+[node name="HeartRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="1"]
+texture = SubResource("AtlasTexture_7e2yh")
 
 [node name="VideoStreamPlayer" parent="Marker2D/PanelContainer" index="1"]
 stream = ExtResource("3_3qmjf")

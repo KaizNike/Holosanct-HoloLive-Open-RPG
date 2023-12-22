@@ -71,6 +71,7 @@ func _ready() -> void:
 		gamepiece.gfx_anchor.remote_path = gamepiece.gfx_anchor.get_path_to(_gfx)
 	$Marker2D/PanelContainer/VSplitContainer/HBoxContainer/NameLabel.text = char_name
 	$Marker2D/PanelContainer.visible = false
+	$Marker2D/PanelContainer/VSplitContainer/HBoxContainer/HeartRect.texture.resource_local_to_scene = true
 
 
 func _physics_process(_delta):

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcgkmws47pxa"]
+
+[ext_resource type="PackedScene" uid="uid://b5igmfumcbl4k" path="res://data/field/characters/kiara_gfx.tscn" id="1_b78ox"]
+[ext_resource type="Texture2D" uid="uid://b5xsujn6gntk3" path="res://assets/characters/Heart.png" id="2_2xuk3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcpes"]
+resource_local_to_scene = true
+atlas = ExtResource("2_2xuk3")
+region = Rect2(0, 0, 12, 12)
+
+[node name="CalliGFX" instance=ExtResource("1_b78ox")]
+
+[node name="Sprite" parent="GFX" index="0"]
+frame = 2
+
+[node name="VSplitContainer" parent="Marker2D/PanelContainer" index="0"]
+collapsed = true
+dragger_visibility = 2
+
+[node name="HeartRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="1"]
+texture = SubResource("AtlasTexture_jcpes")

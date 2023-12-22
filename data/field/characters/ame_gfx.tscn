@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://sc7s27f8kt8l"]
+
+[ext_resource type="PackedScene" uid="uid://dcgkmws47pxa" path="res://data/field/characters/calli_gfx.tscn" id="1_pxtjw"]
+[ext_resource type="Texture2D" uid="uid://b5xsujn6gntk3" path="res://assets/characters/Heart.png" id="2_hda6o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro4qv"]
+resource_local_to_scene = true
+atlas = ExtResource("2_hda6o")
+region = Rect2(0, 0, 12, 12)
+
+[node name="AmeGFX" instance=ExtResource("1_pxtjw")]
+
+[node name="Sprite" parent="GFX" index="0"]
+frame = 3
+
+[node name="HeartRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="1"]
+texture = SubResource("AtlasTexture_ro4qv")
