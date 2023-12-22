@@ -13,6 +13,9 @@ region = Rect2(0, 0, 12, 12)
 [node name="Sprite" parent="GFX" index="0"]
 frame = 2
 
+[node name="TalkRegion" parent="." index="3"]
+visible = true
+
 [node name="VSplitContainer" parent="Marker2D/PanelContainer" index="0"]
 collapsed = true
 dragger_visibility = 2

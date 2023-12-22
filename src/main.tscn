@@ -176,9 +176,6 @@ char_name = "Sam"
 position = Vector2(-4.8, 4)
 shape = SubResource("RectangleShape2D_vhgrf")
 
-[node name="PanelContainer" parent="Objects/Gamepieces/Knight/KnightGFX/Marker2D" index="0"]
-visible = false
-
 [node name="NameLabel" parent="Objects/Gamepieces/Knight/KnightGFX/Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
 text = "Sam"
 
@@ -318,6 +315,9 @@ char_name = "Calli"
 position = Vector2(-0.2, -16.2)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pi0xs")
+
+[node name="NameLabel" parent="Objects/Gamepieces/Gamepiece/CalliGFX/Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
+text = "Calli"
 
 [node name="HeartRect" parent="Objects/Gamepieces/Gamepiece/CalliGFX/Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="1"]
 texture = SubResource("AtlasTexture_70myh")

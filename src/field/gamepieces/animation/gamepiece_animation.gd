@@ -69,6 +69,9 @@ func _ready() -> void:
 		# example we may be swapping animation objects on an existing gamepiece).
 		await get_tree().process_frame
 		gamepiece.gfx_anchor.remote_path = gamepiece.gfx_anchor.get_path_to(_gfx)
+		if dialog and char_name:
+			var rez = str(char_name) + "_hearts"
+			Saving.Save.days[Saving.currentDay][rez] = 0
 	$Marker2D/PanelContainer/VSplitContainer/HBoxContainer/NameLabel.text = char_name
 	$Marker2D/PanelContainer.visible = false
 	$Marker2D/PanelContainer/VSplitContainer/HBoxContainer/HeartRect.texture.resource_local_to_scene = true
@@ -210,6 +213,9 @@ func advance_dialog():
 			currentDialogLine += 1
 		elif dialog[currentDialogLine] == "HEART":
 			$Marker2D/PanelContainer/TextAnims.play("heart_change")
+			var rez = str(char_name) + "_hearts"
+			Saving.Save.days[Saving.currentDay][rez] = 1
+			Saving.save()
 			currentDialogLine += 1
 		else:
 			$Marker2D/PanelContainer/VSplitContainer.visible = true

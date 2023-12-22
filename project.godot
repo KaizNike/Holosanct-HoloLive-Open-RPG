@@ -18,6 +18,7 @@ config/icon="res://assets/gui/icons/app_icon.png"
 
 [autoload]
 
+Saving="*res://src/common/globals/saving.gd"
 FieldEvents="*res://src/common/globals/global_field_events.gd"
 
 [debug]

@@ -20,6 +20,8 @@ extends Node
 func _ready() -> void:
 	randomize()
 	place_camera_at_focused_game_piece()
+	Saving.Save.days.append({})
+	#print(Saving.Save.days)
 
 
 func place_camera_at_focused_game_piece() -> void:
