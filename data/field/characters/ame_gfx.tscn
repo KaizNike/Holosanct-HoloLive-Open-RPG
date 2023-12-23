@@ -13,5 +13,14 @@ region = Rect2(0, 0, 12, 12)
 [node name="Sprite" parent="GFX" index="0"]
 frame = 3
 
+[node name="VSplitContainer" parent="Marker2D/PanelContainer" index="0"]
+visible = true
+z_index = 0
+theme = null
+
 [node name="HeartRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="1"]
 texture = SubResource("AtlasTexture_ro4qv")
+
+[node name="SpeakText" parent="Marker2D/PanelContainer/VSplitContainer" index="1"]
+horizontal_alignment = 0
+autowrap_mode = 0

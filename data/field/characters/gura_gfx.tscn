@@ -14,7 +14,6 @@ atlas = ExtResource("3_orwrp")
 region = Rect2(0, 0, 12, 12)
 
 [node name="GuraGFX" instance=ExtResource("1_bme28")]
-char_name = "???"
 
 [node name="Sprite" parent="GFX" index="0"]
 texture = ExtResource("2_ofmf4")
@@ -26,13 +25,14 @@ position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_pf3g5")
 
 [node name="PanelContainer" parent="Marker2D" index="0"]
-visible = false
-
-[node name="NameLabel" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
-text = "???"
+size_flags_horizontal = 1
 
 [node name="HeartRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="1"]
 texture = SubResource("AtlasTexture_7e2yh")
+
+[node name="SpeakText" parent="Marker2D/PanelContainer/VSplitContainer" index="1"]
+horizontal_alignment = 0
+autowrap_mode = 0
 
 [node name="VideoStreamPlayer" parent="Marker2D/PanelContainer" index="1"]
 stream = ExtResource("3_3qmjf")

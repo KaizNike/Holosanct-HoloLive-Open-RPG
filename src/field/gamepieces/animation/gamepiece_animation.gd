@@ -75,6 +75,8 @@ func _ready() -> void:
 	$Marker2D/PanelContainer/VSplitContainer/HBoxContainer/NameLabel.text = char_name
 	$Marker2D/PanelContainer.visible = false
 	$Marker2D/PanelContainer/VSplitContainer/HBoxContainer/HeartRect.texture.resource_local_to_scene = true
+	$Marker2D/PanelContainer/VSplitContainer/SpeakText.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	$Marker2D/PanelContainer/VSplitContainer/SpeakText.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 
 
 func _physics_process(_delta):
@@ -251,4 +253,10 @@ func _on_talk_region_area_exited(area):
 		print("goodbye")
 		player_in_range = false
 		$Marker2D/PanelContainer.visible = false
+	pass # Replace with function body.
+
+
+func _on_panel_container_gui_input(event):
+	if event.is_action_pressed("select"):
+		_talk_to()
 	pass # Replace with function body.

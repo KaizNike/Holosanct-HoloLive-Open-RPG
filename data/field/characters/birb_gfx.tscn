@@ -10,7 +10,6 @@ atlas = ExtResource("3_2t8j7")
 region = Rect2(0, 0, 12, 12)
 
 [node name="BirbGFX" instance=ExtResource("1_wcoy6")]
-char_name = "???"
 
 [node name="Sprite" parent="GFX" index="0"]
 texture = ExtResource("2_dtoay")
@@ -20,18 +19,19 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="PanelContainer" parent="Marker2D" index="0"]
-visible = false
 z_index = 0
+size_flags_horizontal = 1
 
 [node name="VSplitContainer" parent="Marker2D/PanelContainer" index="0"]
 collapsed = false
 dragger_visibility = 0
 
-[node name="NameLabel" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
-text = "???"
-
 [node name="HeartRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="1"]
 texture = SubResource("AtlasTexture_82so5")
+
+[node name="SpeakText" parent="Marker2D/PanelContainer/VSplitContainer" index="1"]
+horizontal_alignment = 0
+autowrap_mode = 0
 
 [node name="VideoStreamPlayer" parent="Marker2D/PanelContainer" index="1"]
 expand = false

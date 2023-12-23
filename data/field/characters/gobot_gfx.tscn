@@ -1,14 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://qxua6ekob7fa"]
+[gd_scene load_steps=7 format=3 uid="uid://qxua6ekob7fa"]
 
 [ext_resource type="PackedScene" uid="uid://caxhff6by5nqu" path="res://src/field/gamepieces/animation/gamepiece_animation.tscn" id="1_ggnk7"]
 [ext_resource type="AnimationLibrary" uid="uid://dmmjb8ambpwar" path="res://data/field/characters/default_animations/standard_animations.res" id="2_mw4lc"]
 [ext_resource type="Texture2D" uid="uid://4ua1ohn2tllf" path="res://assets/characters/gobot_field.png" id="3_rnaav"]
+[ext_resource type="Texture2D" uid="uid://b5xsujn6gntk3" path="res://assets/characters/Heart.png" id="4_2ceo0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xkmti"]
 size = Vector2(16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h88do"]
+resource_local_to_scene = true
+atlas = ExtResource("4_2ceo0")
+region = Rect2(0, 0, 12, 12)
+
 [node name="GoBotGFX" instance=ExtResource("1_ggnk7")]
-char_name = null
+char_name = "???"
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {
@@ -23,3 +29,12 @@ texture = ExtResource("3_rnaav")
 offset = Vector2(0, -6)
 region_enabled = true
 region_rect = Rect2(1, 1, 16, 16)
+
+[node name="PanelContainer" parent="Marker2D" index="0"]
+visible = false
+
+[node name="NameLabel" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="0"]
+text = "???"
+
+[node name="HeartRect" parent="Marker2D/PanelContainer/VSplitContainer/HBoxContainer" index="1"]
+texture = SubResource("AtlasTexture_h88do")
