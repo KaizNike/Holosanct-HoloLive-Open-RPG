@@ -38,10 +38,3 @@ Check our [Contributors Guide](https://gdquest.gitbook.io/gdquests-guidelines/co
 
 ## This Edition:
 Rebuilt by Kaizar Nike for HoloJam 2, a Hololive by Cover Corp fan project.
-
-# TEAM :
-KaizarNike - Programmer
-Paviel Ulanovskyi - Programmer
-
-KogetsuHatena - Art + Design
-VirtuousVarmint - Writing + Narrative
