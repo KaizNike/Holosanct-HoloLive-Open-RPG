@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://se1wnxu5svgj" path="res://data/field/characters/knight_gfx.tscn" id="1_bme28"]
 [ext_resource type="Texture2D" uid="uid://6x7ucp0ufn68" path="res://assets/characters/HoloENDraft1.png" id="2_ofmf4"]
-[ext_resource type="VideoStream" path="res://assets/vids/REFLECT-Gawr-Gura.ogv" id="3_3qmjf"]
+[ext_resource type="VideoStream" uid="uid://hnymgx0c7e2m" path="res://assets/vids/REFLECT-Gawr-Gura.ogv" id="3_3qmjf"]
 [ext_resource type="Texture2D" uid="uid://b5xsujn6gntk3" path="res://assets/characters/Heart.png" id="3_orwrp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pf3g5"]
